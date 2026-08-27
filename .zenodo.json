@@ -1,0 +1,31 @@
+{
+  "title": "Tlemcen-NeuroOncMRI companion code",
+  "version": "1.0.0",
+  "upload_type": "software",
+  "description": "Companion code for the Tlemcen-NeuroOncMRI dataset and leakage-audited benchmark manuscript.",
+  "creators": [
+    {"name": "Hamza-Cherif, Souaad"},
+    {"name": "Yelles Chaouche, Ines"},
+    {"name": "Elaouaber, Zineb Aziza"},
+    {"name": "Lahfa, Ilhem"},
+    {"name": "Kazi Tani, Lamia Fatiha"},
+    {"name": "Taleb, Lotfi"},
+    {"name": "Chabni, Nafissa"},
+    {"name": "Settouti, Nesma"}
+  ],
+  "license": "MIT",
+  "related_identifiers": [
+    {
+      "identifier": "10.17632/9ns6748zkc.1",
+      "relation": "isSupplementTo",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "TODO_ARTICLE_DOI",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article"
+    }
+  ],
+  "keywords": ["MRI", "neuro-oncology", "multimodal learning", "data leakage", "benchmark"],
+  "notes": "Replace TODO_REPOSITORY_URL, TODO_CODE_DOI, and TODO_ARTICLE_DOI before public Zenodo release."
+}

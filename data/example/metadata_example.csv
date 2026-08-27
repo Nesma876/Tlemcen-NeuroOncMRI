@@ -1,0 +1,3 @@
+ID_Patient,Origine_Tumeur,Sexe,Localisation,ANNOTATION,Rapport,Age,Métastase_Origine,Type_Général
+1,Primaire,F,Frontal,Exemple synthetique sans information patient,Rapport factice pour test,55,,CP
+2,Secondaire,M,Temporal,Exemple synthetique sans information patient,Rapport factice pour test,62,Poumon,CS

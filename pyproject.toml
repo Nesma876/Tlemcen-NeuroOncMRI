@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tlemcen-neurooncmri"
+version = "1.0.0"
+description = "Companion code for the Tlemcen-NeuroOncMRI leakage-audited multimodal benchmark."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Souaad Hamza-Cherif"},
+  {name = "Ines Yelles Chaouche"},
+  {name = "Zineb Aziza Elaouaber"},
+  {name = "Ilhem Lahfa"},
+  {name = "Lamia Fatiha Kazi Tani"},
+  {name = "Lotfi Taleb"},
+  {name = "Nafissa Chabni"},
+  {name = "Nesma Settouti"}
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]

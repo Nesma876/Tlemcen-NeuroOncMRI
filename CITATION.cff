@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated manuscript, the Tlemcen-NeuroOncMRI dataset, and this software repository."
+title: "Tlemcen-NeuroOncMRI companion code"
+version: "1.0.0"
+date-released: "2026-08-27"
+type: software
+authors:
+  - family-names: "Hamza-Cherif"
+    given-names: "Souaad"
+  - family-names: "Yelles Chaouche"
+    given-names: "Ines"
+  - family-names: "Elaouaber"
+    given-names: "Zineb Aziza"
+  - family-names: "Lahfa"
+    given-names: "Ilhem"
+  - family-names: "Kazi Tani"
+    given-names: "Lamia Fatiha"
+  - family-names: "Taleb"
+    given-names: "Lotfi"
+  - family-names: "Chabni"
+    given-names: "Nafissa"
+  - family-names: "Settouti"
+    given-names: "Nesma"
+repository-code: "TODO_REPOSITORY_URL"
+doi: "TODO_CODE_DOI"
+references:
+  - type: dataset
+    title: "Tlemcen-NeuroOncMRI"
+    doi: "10.17632/9ns6748zkc.1"
+  - type: article
+    title: "An Open North-African MRI-Report Dataset and Leakage-Audited Benchmark for Differentiating Primary Brain Tumors from Cerebral Metastases"
+    doi: "TODO_ARTICLE_DOI"

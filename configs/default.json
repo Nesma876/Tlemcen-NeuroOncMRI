@@ -1,0 +1,7 @@
+{
+  "metadata_file": "data/raw/ClasseurPFE1 (1).xlsx",
+  "image_dir": "data/raw/images_v2_final/data p_s",
+  "output_dir": "results/generated",
+  "seed": 42,
+  "max_images_per_patient": 30
+}
