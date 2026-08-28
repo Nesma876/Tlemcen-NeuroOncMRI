@@ -10,6 +10,8 @@ This code connects the published dataset, the original executed Kaggle notebook,
 
 Version: 1.0.0.
 
+Code repository: https://github.com/Nesma876/Tlemcen-NeuroOncMRI.
+
 ## Associated Dataset
 
 Dataset name: Tlemcen-NeuroOncMRI.
@@ -203,7 +205,7 @@ Please cite all applicable research objects:
 
 1. Dataset: Tlemcen-NeuroOncMRI, DOI https://doi.org/10.17632/9ns6748zkc.1.
 2. Article: *An Open North-African MRI-Report Dataset and Leakage-Audited Benchmark for Differentiating Primary Brain Tumors from Cerebral Metastases*. DOI pending.
-3. Software/code: cite this repository release. A code DOI should be added after GitHub-Zenodo archival.
+3. Software/code: cite this repository release at https://github.com/Nesma876/Tlemcen-NeuroOncMRI. A code DOI should be added after GitHub-Zenodo archival.
 
 ## License
 

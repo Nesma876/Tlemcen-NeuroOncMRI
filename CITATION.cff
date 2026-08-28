@@ -21,6 +21,7 @@ authors:
     given-names: "Nafissa"
   - family-names: "Settouti"
     given-names: "Nesma"
+repository-code: "https://github.com/Nesma876/Tlemcen-NeuroOncMRI"
 references:
   - type: dataset
     title: "Tlemcen-NeuroOncMRI"

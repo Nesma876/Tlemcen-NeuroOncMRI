@@ -10,6 +10,8 @@ Associated manuscript: *An Open North-African MRI-Report Dataset and Leakage-Aud
 
 Article DOI: pending.
 
+Companion code repository: https://github.com/Nesma876/Tlemcen-NeuroOncMRI.
+
 ## Redistribution
 
 The full dataset is intentionally absent from this repository. Do not commit raw images, the full metadata workbook, extracted archives, checkpoints, or generated patient-level outputs containing sensitive information.

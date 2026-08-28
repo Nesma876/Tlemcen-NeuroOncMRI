@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "upload_type": "software",
   "description": "Companion code for the Tlemcen-NeuroOncMRI dataset and leakage-audited benchmark manuscript.",
+  "repository": "https://github.com/Nesma876/Tlemcen-NeuroOncMRI",
   "creators": [
     {"name": "Hamza-Cherif, Souaad"},
     {"name": "Yelles Chaouche, Ines"},
