@@ -19,13 +19,8 @@
       "identifier": "10.17632/9ns6748zkc.1",
       "relation": "isSupplementTo",
       "resource_type": "dataset"
-    },
-    {
-      "identifier": "TODO_ARTICLE_DOI",
-      "relation": "isSupplementTo",
-      "resource_type": "publication-article"
     }
   ],
   "keywords": ["MRI", "neuro-oncology", "multimodal learning", "data leakage", "benchmark"],
-  "notes": "Replace TODO_REPOSITORY_URL, TODO_CODE_DOI, and TODO_ARTICLE_DOI before public Zenodo release."
+  "notes": "Add the article DOI when assigned. Add the software DOI after GitHub-Zenodo archival."
 }

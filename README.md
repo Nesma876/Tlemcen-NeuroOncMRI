@@ -22,7 +22,7 @@ The dataset is not distributed through this repository. Download it from the off
 
 Manuscript: *An Open North-African MRI-Report Dataset and Leakage-Audited Benchmark for Differentiating Primary Brain Tumors from Cerebral Metastases*.
 
-Article DOI: TODO_ARTICLE_DOI.
+Article DOI: pending.
 
 ## Data Access
 
@@ -202,8 +202,8 @@ The fusion script intentionally preserves the pre-correction text masking used i
 Please cite all applicable research objects:
 
 1. Dataset: Tlemcen-NeuroOncMRI, DOI https://doi.org/10.17632/9ns6748zkc.1.
-2. Article: *An Open North-African MRI-Report Dataset and Leakage-Audited Benchmark for Differentiating Primary Brain Tumors from Cerebral Metastases*, DOI TODO_ARTICLE_DOI.
-3. Software/code: this repository, URL TODO_REPOSITORY_URL, code DOI TODO_CODE_DOI after Zenodo archival.
+2. Article: *An Open North-African MRI-Report Dataset and Leakage-Audited Benchmark for Differentiating Primary Brain Tumors from Cerebral Metastases*. DOI pending.
+3. Software/code: cite this repository release. A code DOI should be added after GitHub-Zenodo archival.
 
 ## License
 

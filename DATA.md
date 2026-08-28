@@ -8,7 +8,7 @@ Official dataset DOI: https://doi.org/10.17632/9ns6748zkc.1.
 
 Associated manuscript: *An Open North-African MRI-Report Dataset and Leakage-Audited Benchmark for Differentiating Primary Brain Tumors from Cerebral Metastases*.
 
-Article DOI: TODO_ARTICLE_DOI.
+Article DOI: pending.
 
 ## Redistribution
 

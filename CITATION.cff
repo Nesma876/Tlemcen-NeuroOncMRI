@@ -21,12 +21,9 @@ authors:
     given-names: "Nafissa"
   - family-names: "Settouti"
     given-names: "Nesma"
-repository-code: "TODO_REPOSITORY_URL"
-doi: "TODO_CODE_DOI"
 references:
   - type: dataset
     title: "Tlemcen-NeuroOncMRI"
     doi: "10.17632/9ns6748zkc.1"
   - type: article
     title: "An Open North-African MRI-Report Dataset and Leakage-Audited Benchmark for Differentiating Primary Brain Tumors from Cerebral Metastases"
-    doi: "TODO_ARTICLE_DOI"
