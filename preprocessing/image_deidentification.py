@@ -1,5 +1,5 @@
 # =============================================================================
-# CORRECTION D'ANONYMISATION — MASQUAGE DES SURIMPRESSIONS TEXTE
+# ANONYMISATION — MASQUAGE DES SURIMPRESSIONS TEXTE
 #
 # Principe : dans une image de scanner IRM exportée en capture d'écran, le
 # cerveau forme TOUJOURS le plus grand composant connexe de pixels non-noirs.

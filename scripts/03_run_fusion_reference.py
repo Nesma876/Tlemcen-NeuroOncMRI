@@ -1,4 +1,4 @@
-"""Run the historical CamemBERT plus BiomedCLIP fusion reference script."""
+"""Run the exploratory CamemBERT plus BiomedCLIP fusion reference script."""
 
 from __future__ import annotations
 

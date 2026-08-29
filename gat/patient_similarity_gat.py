@@ -1,18 +1,18 @@
 # =============================================================================
 # Q3 — GNN / GAT DE SIMILARITÉ INTER-PATIENTS (ANALYSE EXPLORATOIRE)
 #
-# À la différence des versions précédentes du notebook (où "GAT" n'était en
-# réalité qu'un faux positif textuel — "AGRÉGATION" — sans aucune implémentation
-# de graphe), ce module implémente un VRAI Graph Attention Network, avec :
+# Dans les notes exploratoires du notebook, "GAT" pouvait designer une
+# aggregation textuelle sans implementation de graphe. Ce module implemente
+# un vrai Graph Attention Network, avec :
 #   - un vrai graphe de similarité k-NN (cosinus) entre patients
 #   - une vraie couche d'attention (coefficients softmax sur les voisins,
-#     comme dans les équations de l'article original)
+#     comme dans les équations de l'article de reference)
 #   - un entraînement réel avec autograd (PyTorch), pas une boucle vide
 #
 # CADRAGE MÉTHODOLOGIQUE (à respecter dans l'article) :
 #   - Le graphe est construit de façon TRANSDUCTIVE : au moment de calculer
 #     les similarités, les features de TOUS les patients sont visibles
-#     (y compris le patient testé). C'est une limite documentée, pas un bug.
+#     (y compris le patient testé). C'est une limite documentée du protocole.
 #   - En revanche, le LABEL du patient testé n'est JAMAIS utilisé pendant
 #     l'entraînement (masquage explicite à chaque fold de la LOO-CV).
 #   - Ce module est un COMPLÉMENT exploratoire, pas le modèle principal de
@@ -80,7 +80,7 @@ class SimpleGATLayer(nn.Module):
 
         # Masquage : un patient n'attend que ses voisins (adjacency), le reste à -inf
         e = e.masked_fill(~adjacency, float("-inf"))
-        alpha = F.softmax(e, dim=1)  # coefficients d'attention (Eq. article original)
+        alpha = F.softmax(e, dim=1)  # coefficients d'attention (Eq. article de reference)
 
         h_out = torch.matmul(alpha, h)
         return h_out, alpha

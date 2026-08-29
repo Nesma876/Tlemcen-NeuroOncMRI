@@ -1,4 +1,4 @@
-"""Generate historical word and image occlusion example outputs."""
+"""Generate exploratory word and image occlusion example outputs."""
 
 from __future__ import annotations
 

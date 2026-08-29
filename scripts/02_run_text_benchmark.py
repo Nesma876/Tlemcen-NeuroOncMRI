@@ -1,4 +1,4 @@
-"""Run the corrected masking text benchmark script."""
+"""Run the principal masking specification text benchmark script."""
 
 from __future__ import annotations
 
@@ -29,7 +29,7 @@ def main() -> None:
     os.environ["TNO_METADATA_FILE"] = str(metadata_file)
     os.environ["TNO_OUTPUT_DIR"] = str(output_dir)
     runpy.run_path(
-        str(Path(__file__).resolve().parents[1] / "models" / "text" / "tfidf_camembert_corrected_multiseed.py"),
+        str(Path(__file__).resolve().parents[1] / "models" / "text" / "tfidf_camembert_multiseed.py"),
         run_name="__main__",
     )
 

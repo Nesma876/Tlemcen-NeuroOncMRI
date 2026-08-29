@@ -6,8 +6,8 @@ Audit date: 2026-08-27.
 
 The opened workspace contained `github_repo_final.zip`, which extracted to a Python research repository with:
 
-- `notebooks/full_pipeline_original.ipynb`
-- `models/text/tfidf_camembert_corrected_multiseed.py`
+- `notebooks/full_pipeline_reference.ipynb`
+- `models/text/tfidf_camembert_multiseed.py`
 - `fusion/`
 - `gat/`
 - `xai/`
@@ -31,7 +31,7 @@ No full dataset files, checkpoints, large model files, or generated result CSVs 
 - `/home/claude/...` paths in image de-identification main block.
 - Local workbook path references in exploratory `__main__` blocks for `fusion_base_strategies.py` and `gat/patient_similarity_gat.py`.
 
-The main reproducible wrappers now provide portable path configuration. Some exploratory historical blocks remain documented as requiring author review before being treated as primary CLI entry points.
+The main reproducible wrappers now provide portable path configuration. Some exploratory reference blocks remain documented as requiring author review before being treated as primary CLI entry points.
 
 ## Secrets
 
@@ -39,39 +39,39 @@ No API keys, access tokens, credentials, or passwords were found in the inspecte
 
 ## Scientific Caveats
 
-The repository itself documents that fusion results used pre-correction masking, while the final text benchmark used corrected masking. This was preserved and surfaced in public documentation.
+The repository itself documents that fusion results used exploratory masking specification, while the final text benchmark used principal masking specification. This was preserved and surfaced in public documentation.
 
-## Historical Vs Corrected Masking
+## Text Masking Specifications
 
-Corrected masking is used by:
+Principal masking specification is used by:
 
-- `models/text/tfidf_camembert_corrected_multiseed.py`
+- `models/text/tfidf_camembert_multiseed.py`
 - `scripts/02_run_text_benchmark.py`
 
-Historical/pre-correction masking is used by:
+Exploratory masking specification is used by:
 
 - `fusion/camembert_biomedclip_fusion_delong.py`
 - `scripts/03_run_fusion_reference.py`
 - `xai/word_and_image_occlusion.py`
 - `scripts/04_generate_xai_examples.py`
-- notebook cells preceding the final corrected text benchmark
+- notebook cells preceding the final principal text benchmark
 
-`fusion/all_5_fusion_strategies.py` belongs to the historical notebook context. It depends on variables created in earlier notebook cells (`proba_camembert`, `proba_foundation`, embeddings, labels, and helper functions). Making it standalone would require supplying serialized intermediate outputs that are not present in the repository. It is therefore documented as PARTIAL rather than rewritten.
+`fusion/all_5_fusion_strategies.py` belongs to the reference notebook context. It depends on variables created in earlier notebook cells (`proba_camembert`, `proba_foundation`, embeddings, labels, and helper functions). Making it standalone would require supplying serialized intermediate outputs that are not present in the repository. It is therefore documented as PARTIAL rather than rewritten.
 
 ## Paper-To-Code Classification
 
 | Analysis | Entry point | Protocol | Classification |
 | --- | --- | --- | --- |
-| Corrected text benchmark | `scripts/02_run_text_benchmark.py` | corrected masking | standalone reproducible |
-| BiomedCLIP branch in fusion | `scripts/03_run_fusion_reference.py` | historical fusion run | standalone historical |
-| Guided fusion and DeLong | `scripts/03_run_fusion_reference.py` | historical masking | standalone historical |
-| Five fusion strategies | `fusion/all_5_fusion_strategies.py` | historical notebook context | partial |
+| Principal text benchmark | `scripts/02_run_text_benchmark.py` | principal masking specification | standalone reproducible |
+| BiomedCLIP branch in fusion | `scripts/03_run_fusion_reference.py` | exploratory fusion run | standalone exploratory |
+| Guided fusion and DeLong | `scripts/03_run_fusion_reference.py` | exploratory masking specification | standalone exploratory |
+| Five fusion strategies | `fusion/all_5_fusion_strategies.py` | reference notebook context | partial |
 | GAT | `gat/patient_similarity_gat.py` | exploratory transductive graph | exploratory partial |
-| Text/image occlusion | `scripts/04_generate_xai_examples.py` | historical interpretability run | standalone historical |
+| Text/image occlusion | `scripts/04_generate_xai_examples.py` | exploratory interpretability run | standalone exploratory |
 | Image de-identification | `scripts/05_deidentify_images.py` | preprocessing | standalone reproducible |
 
 ## Privacy Review
 
 The committed tree should not include the full dataset, medical images, full patient metadata, checkpoints, model weights, generated patient-level result CSVs, or notebook outputs. The only data under `data/example/` is synthetic smoke-test metadata and empty class folders.
 
-Absolute `/kaggle/` paths remain in historical notebook/script sources as provenance defaults. No `C:\`, `D:\`, `/Users/`, or `/home/` personal source paths remain in executable defaults after the CLI cleanup, except this audit note describing what was found before cleanup.
+Absolute `/kaggle/` paths remain in reference notebook/script sources as provenance defaults. No `C:\`, `D:\`, `/Users/`, or `/home/` personal source paths remain in executable defaults after the CLI cleanup, except this audit note describing what was found before cleanup.

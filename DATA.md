@@ -66,7 +66,7 @@ The image scripts expect class folders named `CP` and `CS`. Patient image lookup
 
 ## Derived Data
 
-Generated outputs should be written under `results/generated/` and are ignored by Git. Historical reference values are documented in `README.md` and `results/reference/README.md`; reference result files should only be added if they are already approved for redistribution.
+Generated outputs should be written under `results/generated/` and are ignored by Git. Exploratory reference values are documented in `README.md` and `results/reference/README.md`; reference result files should only be added if they are already approved for redistribution.
 
 ## Example Data
 

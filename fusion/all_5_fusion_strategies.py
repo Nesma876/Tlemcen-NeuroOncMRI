@@ -1,17 +1,17 @@
 # =============================================================================
-# SOURCE : cellule 37 du notebook original (notebooks/full_pipeline_original.ipynb)
+# SOURCE : cellule 37 du notebook de reference (notebooks/full_pipeline_reference.ipynb)
 # Script REEL, exécuté sur Kaggle, comparant les 5 strategies de fusion
 # (Table 5 du manuscrit) sur les MEMES branches CamemBERT + BiomedCLIP.
 # Contient run_loocv_early_fusion() et run_guided_fusion() -- les 2
-# strategies qui n'existent QUE dans ce notebook (jamais sauvegardees
-# comme fichiers autonomes avant cette extraction).
+# strategies qui n'existent QUE dans ce notebook et ne sont pas fournies
+# comme fichiers autonomes complets.
 #
 # Depend de fonctions definies dans une cellule precedente du notebook
 # (fusion_moyenne_simple, fusion_pondere_loocv, fusion_stacking_loocv,
 # summarize, bootstrap_ci, proba_camembert, proba_foundation, y, SEED) --
-# voir notebooks/full_pipeline_original.ipynb pour le contexte complet.
+# voir notebooks/full_pipeline_reference.ipynb pour le contexte complet.
 #
-# STATUT RELEASE PUBLIQUE : historique / PARTIAL. Ce fichier preserve la logique
+# STATUT RELEASE PUBLIQUE : exploratory / PARTIAL. Ce fichier preserve la logique
 # exacte de la cellule 37. Il n'est pas converti en CLI autonome car les
 # embeddings et probabilites intermediaires requis ne sont pas serialises dans
 # ce repository public.

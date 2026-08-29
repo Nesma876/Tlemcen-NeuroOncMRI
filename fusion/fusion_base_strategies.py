@@ -1,9 +1,9 @@
 # =============================================================================
 # FUSION TARDIVE — 3 VARIANTES, DE LA PLUS SIMPLE À LA PLUS SOPHISTIQUÉE
 #
-# Corrige le défaut de la "Super Fusion" originale : là où le notebook de
-# départ optimisait les poids et le seuil de décision directement sur
-# l'ensemble des 45 patients (biais optimiste, cf. audit initial), toute
+# Cette version evite le defaut methodologique de la "Super Fusion" de
+# reference : les poids et le seuil de decision ne sont pas optimises
+# directement sur l'ensemble des 45 patients (biais optimiste). Toute
 # pondération apprise ici est apprise EN LOO-CV, donc sans jamais voir le
 # label du patient testé au moment de fixer les poids.
 #

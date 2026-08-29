@@ -1,5 +1,5 @@
 # =============================================================================
-# SOURCE : cellule 47 du notebook original (notebooks/full_pipeline_original.ipynb)
+# SOURCE : cellule 47 du notebook de reference (notebooks/full_pipeline_reference.ipynb)
 # Script REEL, exécuté sur Kaggle, ayant produit les figures d'occlusion du
 # manuscrit (word-occlusion importance, patch-occlusion saliency map) pour
 # le patient CS illustratif (Section 4.8, Fig. 6-7).

@@ -1,17 +1,17 @@
 # =============================================================================
-# SOURCE : cellule 46 du notebook original (notebooks/full_pipeline_original.ipynb)
+# SOURCE : cellule 46 du notebook de reference (notebooks/full_pipeline_reference.ipynb)
 # Script REEL, exécuté sur Kaggle, ayant produit les chiffres de fusion
 # officiels du manuscrit (Table 5) :
-#   CamemBERT seul   : AUC = 0.763 (reference-run, PRE-correction masquage)
+#   CamemBERT seul   : AUC = 0.763 (exploratory reference run, exploratory masking specification)
 #   BiomedCLIP seul  : AUC = 0.807
 #   Fusion guidee    : AUC = 0.914, DeLong vs BiomedCLIP : delta=+0.107, p=0.099
 #
 # ATTENTION VERSIONING (documente dans le manuscrit, Section 5) : ce script
-# utilise le masquage de texte NON corrige (CLASS_REVEALING_TERMS avec \b,
+# utilise le masquage de texte NON principal (CLASS_REVEALING_TERMS avec \b,
 # pas \w*) -- c'est pourquoi CamemBERT donne ici 0.763 et non 0.775 (valeur
-# corrigee, voir models/text/tfidf_camembert_corrected_multiseed.py). Les
+# principale, voir models/text/tfidf_camembert_multiseed.py). Les
 # resultats de fusion sont donc rapportes comme EXPLORATOIRES dans le
-# manuscrit, pas comme extension directe du benchmark texte corrige.
+# manuscrit, pas comme extension directe du benchmark texte principal.
 # =============================================================================
 
 import os

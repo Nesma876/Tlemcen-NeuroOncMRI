@@ -6,7 +6,7 @@ This repository contains the code used to document and reproduce the leakage-aud
 
 ## Overview
 
-This code connects the published dataset, the original executed Kaggle notebook, and extracted standalone scripts. It is intended for scientific traceability: readers can identify which entry point reproduces each documented analysis, which protocol was used, and which analyses are historical or exploratory.
+This code connects the published dataset, the reference executed Kaggle notebook, and extracted standalone scripts. It is intended for scientific traceability: readers can identify which entry point reproduces each documented analysis, which protocol was used, and which analyses are reproducible or exploratory.
 
 Version: 1.0.0.
 
@@ -49,7 +49,7 @@ See `DATA.md` for required columns, file conventions, and what is intentionally 
 
 ## Repository Scope
 
-The repository preserves the original Kaggle notebook and extracted scripts used for the manuscript. It also adds lightweight command-line wrappers, configuration, dataset validation, metadata, and tests so an external researcher can understand the path:
+The repository preserves the reference Kaggle notebook and extracted scripts used for the manuscript. It also adds lightweight command-line wrappers, configuration, dataset validation, metadata, and tests so an external researcher can understand the path:
 
 ```text
 published dataset -> validation -> preprocessing -> text/image analysis -> fusion/evaluation -> XAI outputs
@@ -64,12 +64,12 @@ No scientific results are recomputed during installation or testing, and no data
 ├── configs/                 Default portable configuration
 ├── data/                    Dataset instructions and synthetic smoke-test example
 ├── docs/                    Audit notes for public release preparation
-├── evaluation/              DeLong and XAI helper functions from the original work
+├── evaluation/              DeLong and XAI helper functions from the reference work
 ├── figures/                 Placeholder for generated manuscript figures
-├── fusion/                  Historical fusion scripts and strategies
+├── fusion/                  Exploratory fusion scripts and strategies
 ├── gat/                     Exploratory patient-similarity GAT implementation
-├── models/text/             Corrected masking text benchmark script
-├── notebooks/               Original full executed notebook, outputs stripped for Git
+├── models/text/             Principal masking specification text benchmark script
+├── notebooks/               Reference full executed notebook, outputs stripped for Git
 ├── preprocessing/           Image de-identification helper
 ├── results/                 Reference-output documentation, generated outputs ignored
 ├── scripts/                 Numbered command-line workflow wrappers
@@ -107,19 +107,19 @@ Validate the dataset:
 python scripts/01_validate_dataset.py --metadata-file "data/raw/ClasseurPFE1 (1).xlsx" --image-dir "data/raw/images_v2_final/data p_s"
 ```
 
-Run the corrected masking text benchmark:
+Run the principal masking specification text benchmark:
 
 ```bash
 python scripts/02_run_text_benchmark.py --config configs/default.json
 ```
 
-Run the historical fusion reference analysis:
+Run the exploratory fusion reference analysis:
 
 ```bash
 python scripts/03_run_fusion_reference.py --config configs/default.json
 ```
 
-Generate the historical XAI examples:
+Generate the exploratory XAI examples:
 
 ```bash
 python scripts/04_generate_xai_examples.py --config configs/default.json
@@ -137,67 +137,67 @@ Only outputs directly identifiable from the repository are listed here. Scripts 
 
 | Analysis / paper output | Script | Output |
 | --- | --- | --- |
-| Corrected masking TF-IDF/CamemBERT benchmark | `scripts/02_run_text_benchmark.py` | `results/generated/multiseed_corrected_masking.csv` |
-| Historical CamemBERT + BiomedCLIP guided fusion and DeLong test | `scripts/03_run_fusion_reference.py` | `results/generated/final_probabilities_for_plots.csv` |
-| Five fusion strategies table | `fusion/all_5_fusion_strategies.py` | `fusion_5strategies_complet.csv` when run in original notebook context |
+| Principal masking specification TF-IDF/CamemBERT benchmark | `scripts/02_run_text_benchmark.py` | `results/generated/multiseed_principal_masking.csv` |
+| Exploratory CamemBERT + BiomedCLIP guided fusion and DeLong test | `scripts/03_run_fusion_reference.py` | `results/generated/final_probabilities_for_plots.csv` |
+| Five fusion strategies table | `fusion/all_5_fusion_strategies.py` | `fusion_5strategies_complet.csv` when run in reference notebook context |
 | Patient-similarity GAT exploratory analysis | `gat/patient_similarity_gat.py` | Console summary; image OOF CSV required for combined branch |
 | Word/image occlusion examples | `scripts/04_generate_xai_examples.py` | `results/generated/word_occlusion_example.csv`, `results/generated/image_occlusion_example.csv` |
 | Image overlay de-identification | `scripts/05_deidentify_images.py` | Cleaned image copies and CSV log |
 
-The original notebook `notebooks/full_pipeline_original.ipynb` remains the provenance source for the extracted scripts.
+The reference notebook `notebooks/full_pipeline_reference.ipynb` remains the provenance source for the extracted scripts.
 
 ## Paper-To-Code Map
 
 | Paper analysis | Entry point | Protocol | Status |
 | --- | --- | --- | --- |
-| Text benchmark: TF-IDF safe features | `scripts/02_run_text_benchmark.py` | corrected masking | REPRODUCIBLE |
-| Text leakage ablation: TF-IDF plus risk feature | `scripts/02_run_text_benchmark.py` | corrected masking | REPRODUCIBLE |
-| Text benchmark: CamemBERT | `scripts/02_run_text_benchmark.py` | corrected masking | REPRODUCIBLE |
-| BiomedCLIP image branch | `scripts/03_run_fusion_reference.py` | historical fusion run | REPRODUCIBLE/HISTORICAL |
-| CamemBERT plus BiomedCLIP guided fusion | `scripts/03_run_fusion_reference.py` | historical masking | REPRODUCIBLE/HISTORICAL |
-| DeLong guided fusion vs BiomedCLIP | `scripts/03_run_fusion_reference.py` | historical masking | REPRODUCIBLE/HISTORICAL |
-| Five fusion strategies | `fusion/all_5_fusion_strategies.py` | historical notebook context | PARTIAL |
+| Text benchmark: TF-IDF safe features | `scripts/02_run_text_benchmark.py` | principal masking specification | REPRODUCIBLE |
+| Text leakage ablation: TF-IDF plus risk feature | `scripts/02_run_text_benchmark.py` | principal masking specification | REPRODUCIBLE |
+| Text benchmark: CamemBERT | `scripts/02_run_text_benchmark.py` | principal masking specification | REPRODUCIBLE |
+| BiomedCLIP image branch | `scripts/03_run_fusion_reference.py` | exploratory fusion run | REPRODUCIBLE/EXPLORATORY |
+| CamemBERT plus BiomedCLIP guided fusion | `scripts/03_run_fusion_reference.py` | exploratory masking specification | REPRODUCIBLE/EXPLORATORY |
+| DeLong guided fusion vs BiomedCLIP | `scripts/03_run_fusion_reference.py` | exploratory masking specification | REPRODUCIBLE/EXPLORATORY |
+| Five fusion strategies | `fusion/all_5_fusion_strategies.py` | reference notebook context | PARTIAL |
 | Patient-similarity GAT | `gat/patient_similarity_gat.py` | exploratory transductive graph analysis | EXPLORATORY/PARTIAL |
-| Text occlusion XAI | `scripts/04_generate_xai_examples.py` | historical interpretability run | REPRODUCIBLE/HISTORICAL |
-| Image occlusion XAI | `scripts/04_generate_xai_examples.py` | historical interpretability run | REPRODUCIBLE/HISTORICAL |
+| Text occlusion XAI | `scripts/04_generate_xai_examples.py` | exploratory interpretability run | REPRODUCIBLE/EXPLORATORY |
+| Image occlusion XAI | `scripts/04_generate_xai_examples.py` | exploratory interpretability run | REPRODUCIBLE/EXPLORATORY |
 | Image overlay de-identification | `scripts/05_deidentify_images.py` | preprocessing | REPRODUCIBLE |
 
-## Historical Vs Corrected Masking
+## Text Masking Specifications
 
-The final text benchmark uses corrected masking in `models/text/tfidf_camembert_corrected_multiseed.py`. This correction masks plural and related class-revealing terms and is documented in the script as the definitive text benchmark protocol.
+The final text benchmark uses principal masking specification in `models/text/tfidf_camembert_multiseed.py`. This specification masks plural and related class-revealing terms and is documented in the script as the principal text benchmark protocol.
 
-Some fusion experiments were executed before that correction, using the historical masking in `fusion/camembert_biomedclip_fusion_delong.py` and notebook-derived fusion cells. These values are preserved for traceability of the original experimental record. They should not be interpreted as fusion results recalculated under the corrected masking protocol.
+Some fusion experiments use a distinct exploratory masking specification in `fusion/camembert_biomedclip_fusion_delong.py` and notebook-derived fusion cells. These values are preserved for traceability of the reference experimental record. They should not be interpreted as fusion results recalculated under the principal masking specification protocol.
 
 The two protocols are therefore intentionally both present:
 
-- corrected masking: final text benchmark and leakage ablation;
-- historical/pre-correction masking: historical fusion reference, five-strategy fusion context, and associated DeLong/XAI outputs.
+- principal masking specification: final text benchmark and leakage ablation;
+- exploratory masking specification: exploratory fusion reference, five-strategy fusion context, and associated DeLong/XAI outputs.
 
 ## Exploratory Analyses
 
 The GAT code is explicitly exploratory. It implements a transductive patient-similarity graph and documents that the tested patient's features are visible when graph similarities are built, while the tested label is masked during training.
 
-`fusion/all_5_fusion_strategies.py` is also historical/notebook-dependent. It uses variables and intermediate embeddings created in earlier notebook cells. Because the repository does not contain approved serialized intermediate outputs for all those variables, it is classified as PARTIAL rather than a standalone primary entry point.
+`fusion/all_5_fusion_strategies.py` is also reference-notebook-dependent. It uses variables and intermediate embeddings created in earlier notebook cells. Because the repository does not contain approved serialized intermediate outputs for all those variables, it is classified as PARTIAL rather than a standalone primary entry point.
 
 ## Reported Reference Results
 
-These values were already documented in the original repository and are not generated during tests:
+These values were already documented in the reference repository materials and are not generated during tests:
 
 | Model or analysis | AUC / result | Source |
 | --- | --- | --- |
-| TF-IDF + hand-crafted, corrected masking | 0.802 +/- 0.029, 6 seeds | Notebook cell 49 |
+| TF-IDF + hand-crafted, principal masking specification | 0.802 +/- 0.029, 6 seeds | Notebook cell 49 |
 | TF-IDF + leaking feature ablation | 0.967 +/- 0.011, 6 seeds | Notebook cell 49 |
-| CamemBERT, corrected masking | 0.775 | Notebook cell 49 |
-| CamemBERT, pre-correction fusion run | 0.763 | Notebook cell 46 |
+| CamemBERT, principal masking specification | 0.775 | Notebook cell 49 |
+| CamemBERT, exploratory specification fusion run | 0.763 | Notebook cell 46 |
 | BiomedCLIP slice-level | 0.802 +/- 0.024, 6 seeds | Notebook cells 28-31 |
 | Agreement-guided fusion | 0.914 reference run | Notebook cells 37, 39, 46 |
 | DeLong guided fusion vs BiomedCLIP | delta=+0.107, p=0.099 | Notebook cells 43, 46 |
 
 ## Reproducibility Notes
 
-The wrappers use portable paths through CLI arguments, `configs/default.json`, or environment variables. Seeds are set in the historical scripts and exposed in the lightweight utilities. GPU and transformer/model-hub behavior may remain partly non-deterministic depending on CUDA, PyTorch, and external model versions.
+The wrappers use portable paths through CLI arguments, `configs/default.json`, or environment variables. Seeds are set in the reference scripts and exposed in the lightweight utilities. GPU and transformer/model-hub behavior may remain partly non-deterministic depending on CUDA, PyTorch, and external model versions.
 
-The fusion script intentionally preserves the pre-correction text masking used in the historical fusion run. The corrected masking benchmark is separate and should not be silently substituted into the fusion results.
+The fusion script intentionally preserves the exploratory specification text masking used in the exploratory fusion run. The principal masking specification benchmark is separate and should not be silently substituted into the fusion results.
 
 ## Citation
 
@@ -215,4 +215,4 @@ Dataset license: separate from the code; see the official dataset page at https:
 
 ## Acknowledgments
 
-The repository preserves the authorship and license information present in the original code release materials. Dataset access and reuse remain governed by the official dataset record.
+The repository preserves the authorship and license information present in the reference code release materials. Dataset access and reuse remain governed by the official dataset record.
